@@ -1,5 +1,6 @@
 export const gallery = document.querySelector(".gallery")
-
+export const searchInput = document.querySelector(".search-input")
+export const searchForm = document.querySelector(".search-form")
 export async function fetchImages (api) {
     try{
         const images = await fetch(api)
@@ -14,7 +15,7 @@ export function renderImages(photos) {
     photos.forEach(photo => {
         gallery.insertAdjacentHTML("afterbegin", 
         `<div class="photo-card">
-            <img src="${photo.largeImageURL}" alt="${photo.tags}" loading="lazy" />
+            <img src="${photo.webformatURL}" alt="${photo.tags}" loading="lazy" />
             <div class="info">
                 <p class="info-item">
                     <b>Likes ${photo.likes}</b>
